@@ -22,3 +22,13 @@ ctr.addEventListener('fullscreenchange', function () {
   hw.style.color = 'black'
   hw.innerText = `You just resized`
 });
+document.addEventListener('fullscreenchange', (event) => {
+  // document.fullscreenElement will point to the element that
+  // is in fullscreen mode if there is one. If there isn't one,
+  // the value of the property is null.
+  if (document.fullscreenElement) {
+    console.log(`Element: ${document.fullscreenElement.ctr} entered full-screen mode.`);
+  } else {
+    console.log('Leaving full-screen mode.');
+  }
+});
